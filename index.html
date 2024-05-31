@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/be93b6a1da.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div
+        class="d-flex flex-column justify-content-center align-items-center bg-F7ECDE pb-5 position-absolute start-0 end-0 min-height">
+        <h1 class="text-center font-main fw-bolder fs-0 main-text mb-5 pb-4"> Bookmarker </h1>
+
+
+        <div class="body container d-flex flex-column justify-content-center align-items-center">
+            <h2 class="h4 fw-bold mt-3 bg-gradient1 mb-4"><i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <div class="w-100 d-flex flex-column justify-content-center align-items-center">
+                <div class="d-flex flex-column justify-content-center align-items-start w-100">
+                    <label for=" Site Name" class="fw-bold"> <i class="fa-solid fa-book-bookmark pe-2 mb-2"></i> Site
+                        Name</label>
+                    <input type="text" id="SiteName" name="Site Name" placeholder="Bookmark Name"
+                        class="mb-3 w-100 h-3 p-2 inputx form-control " oninput="validate1(this)">
+                    <label for="bookmarkname" class="fw-bold"><i class="fa-solid fa-link pe-2 mb-2"></i> Site
+                        URL</label>
+                    <input type="text" id="bookmarkname" name="bookmarkname" placeholder="Website URL"
+                        class="mb-3 w-100 h-3 p-2 inputx form-control is-valid " oninput="validate2(this)">
+
+                </div>
+                <button class="btn btn-danger w-10 my-2" onclick="addsite()">Submit</button>
+            </div>
+
+        </div>
+        <div class="container">
+            <table class="table mt-4 text-center bg-light">
+                <thead>
+                    <tr>
+                        <th class="text-capitalize">index</th>
+                        <th class="text-capitalize">Website Name</th>
+                        <th class="text-capitalize">Visit</th>
+                        <th class="text-capitalize">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tableContent">
+                </tbody>
+            </table>
+        </div>
+       
+        <div id="error" class="box-info position-absolute start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center d-none">
+            <div class="box-conent bg-white p-4 rounded-2 shadow-lg">
+              <header class="box-header w-100 d-flex justify-content-between align-items-center mb-4">
+                <div class="circles d-flex">
+                  <span class="rounded-circle me-2"></span>
+                  <span class="rounded-circle me-2"></span>
+                  <span class="rounded-circle me-2"></span>
+                </div>
+                <button class="btn border-0" id="closeBtn" onclick="hide()">
+                  <i class="fa-solid fa-xmark close fs-3"></i>
+                </button>
+              </header>
+              <p class="m-0 pb-2 fw-bold">
+                Site Name or Url is not valid, Please follow the rules below :
+              </p>
+              <ol class="rules list-unstyled m-0">
+                <li>
+                  <i class="fa-regular fa-circle-right p-2"></i>Site name must
+                  contain at least 3 characters
+                </li>
+                <li>
+                  <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+                  valid one
+                </li>
+              </ol>
+            </div>
+          </div>
+    </div>
+    
+
+
+
+
+    <script src="bootstrap.bundle.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
